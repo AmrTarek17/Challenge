@@ -115,8 +115,8 @@ Here are some screenshots of the application up and running with Docker Compose:
 
 ![Nuxt.js Application](screenshots/nuxt_application.png)
 
-
-> [!GitHubActionsWorkflows]
+[!IMPORTANT] 
+> For GitHubActions Workflows:
 > Check .github/workflows  
 
 
