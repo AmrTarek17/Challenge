@@ -11,7 +11,7 @@ Welcome to the **Book API Application!** This project features a **Laravel API**
 - [Migrating the Database](#migrating-the-database)
 - [Adding the Self-Signed Certificate to Trusted Certificates](#adding-the-self-signed-certificate-to-trusted-certificates)
 - [Accessing the Application](#accessing-the-application)
-
+- [Application Screenshot](#Application-Screenshot)
 ---
 
 ## 📖 Overview
