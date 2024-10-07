@@ -116,5 +116,9 @@ Here are some screenshots of the application up and running with Docker Compose:
 ![Nuxt.js Application](screenshots/nuxt_application.png)
 
 
+> [!GitHubActionsWorkflows]
+> Check .github/workflows  
+
+
                 
 Thank you for checking out the Book API Application! If you have any questions, feel free to open an issue or reach out. Happy coding! 🚀
