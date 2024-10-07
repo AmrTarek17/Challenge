@@ -108,7 +108,8 @@ This repository contains a simple web application with two main components:
 > [!NOTE]
 > If you encounter SSL certificate errors, you can bypass verification (not recommended for production) by using:```curl -k https://localhost```
 
-## 📸 Application Screenshot <a name="Application-Screenshot"></a>
+
+## 📸 Application Screenshot <div id='Application-Screenshot'/>
 
 Here are some screenshots of the application up and running with Docker Compose:
 
