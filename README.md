@@ -108,5 +108,13 @@ This repository contains a simple web application with two main components:
    
 > [!NOTE]
 > If you encounter SSL certificate errors, you can bypass verification (not recommended for production) by using:```curl -k https://localhost```
+
+## 📸 Application Screenshot
+
+Here are some screenshots of the application up and running with Docker Compose:
+
+![Nuxt.js Application](screenshots/nuxt_application.png)
+
+
                 
 Thank you for checking out the Book API Application! If you have any questions, feel free to open an issue or reach out. Happy coding! 🚀
