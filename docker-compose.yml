@@ -1,0 +1,82 @@
+version: '3.9'
+
+services:
+  db:
+    image: mysql:5.7
+    container_name: db
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+      MYSQL_DATABASE: bookapi
+      MYSQL_USER: app
+      MYSQL_PASSWORD: password
+      
+    ports:
+      - "3307:3306"
+    networks:
+      - app-network
+    volumes:
+      - db_data:/var/lib/mysql
+
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: api
+    environment:
+      DB_HOST: db
+      DB_DATABASE: bookapi
+      DB_USERNAME: app
+      DB_PASSWORD: password
+    volumes:
+      - ./api:/var/www
+    ports:
+      - "8000:8000"
+    networks:
+      - app-network
+    depends_on:
+      - db
+
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: client
+    volumes:
+      - ./client:/usr/src/app
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+    environment:
+      NODE_ENV: production
+    depends_on:
+      - api
+    # healthcheck:
+    #   test: ["CMD", "curl", "-f", "http://localhost:3000"]
+    #   interval: 30s
+    #   timeout: 10s
+    #   retries: 5
+
+
+  nginx_proxy:
+    image: nginx:latest
+    container_name: nginx_proxy
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./certs:/etc/nginx/certs
+    networks:
+      - app-network
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - api
+      - client
+    # restart: always
+
+volumes:
+  db_data:
+
+networks:
+  app-network:
+    driver: bridge
