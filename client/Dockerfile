@@ -7,6 +7,9 @@ WORKDIR /usr/src/app
 # Copy package.json and install dependencies
 COPY package*.json ./
 RUN npm install
+
+
+
 # RUN npm install --save-dev @nuxt/types
 # RUN npm install --save-dev @nuxt/kit
 # RUN npm install nuxt
